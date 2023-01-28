@@ -1,0 +1,87 @@
+<div class="alert alert-primary text-center" role="alert">
+    Read the Blog Posts from different authors below
+</div>
+
+
+<!-- Blogs Posts Starts Here -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 mb-3" *ngFor="let post of posts; index as i;">
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title" #title>{{post.postTitle}}</h3>
+                    <h4 class="card-subtitle mb-2 text-muted">Tags: {{post.postTags}}</h4>
+                    <p class="card-text">
+                        {{post.postBody}}
+                    </p>
+                    <h6 class="card-subtitle mb-2 text-muted">Authored By: {{post.postAuthor}}</h6>
+                    <div class="emoji-wrapper">
+                        <p><span class="emoji">👏</span> {{post.postReactions}}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="javascript:void(0);" class="card-link btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" (click)="editpostData(post)">Edit Post</a>
+                        <a href="javascript:void(0);" class="card-link btn btn-warning"
+                            (click)="deletePost(post.id)">Delete Post</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- </div> -->
+
+        </div>
+    </div>
+</div>
+
+<!-- Blogs Posts Ends Here -->
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Post Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editFormValues">
+                    <div class="mb-3">
+                        <label for="postTitle" class="form-label">Post Title</label>
+                        <input type="text" class="form-control" id="postTitle" aria-describedby="postTitle"
+                            formControlName="postTitle" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postAuthor" class="form-label">Post Author</label>
+                        <input type="text" class="form-control" id="postAuthor" aria-describedby="postAuthor"
+                            formControlName="postAuthor" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postBody" class="form-label">Post Body</label>
+                        <input type="text" class="form-control" id="postBody" formControlName="postBody"
+                            aria-describedby="postBody" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postTags" class="form-label">Post Tags</label>
+                        <input type="text" class="form-control" id="postTags" formControlName="postTags"
+                            aria-describedby="postTags" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postReactions" class="form-label">Post Reactions</label>
+                        <input type="text" class="form-control" id="postReactions" aria-describedby="postReactions"
+                            formControlName="postReactions" value="">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="EditModalSave"
+                    (click)="updateEditPostData()">Save</button>
+                <button type="button" class="btn btn-secondary" id="EditModalCancel"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

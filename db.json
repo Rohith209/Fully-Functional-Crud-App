@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "postTitle": "My first Blog Post",
+      "postAuthor": "Rohith Sai",
+      "postBody": "Learning Angular Newly",
+      "postReactions": "1",
+      "postTags": "maiden, first, blog, write",
+      "id": 1,
+      "postId": 1
+    },
+    {
+      "postTitle": "My Blog Post",
+      "postAuthor": "Rohith",
+      "postBody": "Learning Angular Newly",
+      "postReactions": "3",
+      "postTags": "angular, experience, fresher",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

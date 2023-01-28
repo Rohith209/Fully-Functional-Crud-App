@@ -1,0 +1,23 @@
+.emoji-wrapper {
+    padding: 10px;
+    padding-right: 20px;
+    background-color: bisque;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.emoji-wrapper span {
+    font-size: 34px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.emoji-wrapper p {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    font-weight: 500;
+}
